@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Rock Papper Scissors</title>
 
-    <div class="score-display">
-        1
-    </div>
-    
-    <script src="script.js"></script>
-    <script>
-        let score = 0;
-        score = player1Score;
-        element = document.getElementsByClassName('score-display')[0]
-        element.innerHTML = score;
-    </script>
-    
-</body>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <header>Rock Papper, & Scissor</header>
+    <main>
+      <div class="game-main-content">
+          <div class="player" id="player1">
+            <div class="player-name">Player 1</div>
+            <div class="icon">
+              <img src="assets/player_icons/Player.svg" alt="" />
+            </div>
+            <div class="selections">
+              <div class="rock selection-item" id="player1Rock">Rock</div>
+              <div class="papper selection-item" id="player1Papper">
+                Papper
+              </div>
+              <div class="scissor selection-item" id="player1Scissor">
+                Scissor
+              </div>
+            </div>
+          </div>
+          <div class="score-display">
+            <span id="player1Score">0</span><span>:</span
+            ><span id="player2Score">0</span>
+          </div>
+          <div class="player" id="player2">
+            <div class="player-name">Computer</div>
+            <div class="icon">
+              <img src="assets/player_icons/Robot.svg" alt="" />
+            </div>
+            <div class="selections">
+              <div class="rock selection-item" id="player1Rock">Rock</div>
+              <div class="papper selection-item" id="player1Papper">
+                Papper
+              </div>
+              <div class="scissor selection-item" id="player1Scissor">
+                Scissor
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    <!-- <script src="script.js"></script> -->
+  </body>
 </html>
