@@ -99,8 +99,12 @@ Player
     cursor: pointer;
 }
 
-.selection-item-en:active{
+.selection-item-en:hover{
     background-color: gray;
+}
+
+.selection-item-en:active{
+    background-color: rgb(71, 71, 71);
 }
 
 /*
