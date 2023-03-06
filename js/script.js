@@ -18,17 +18,35 @@ const choicesEnum = {
   },
 };
 
-// returns a random element in choices variable
-function getComputerChoice() {
-  return choicesEnum.getRandomChoice();
-}
-
 const players = {
   player1: "player1",
   player2: "player2"
 }
 
-const player1 =
+// returns a random element in choices variable
+function getComputerChoice() {
+  return choicesEnum.getRandomChoice();
+}
+
+//get players
+const player1DOM = document.getElementById('player1')
+const player2DOM = document.getElementById('player2')
+
+//set player1 selection buttons
+const player1Buttons = player1DOM
+  .getElementsByClassName('selection-item')
+
+
+//set player2 selection buttons
+const player2Buttons = player2DOM
+  .getElementsByClassName('selection-item')
+
+
+//set Players Name
+players.player1 = getPlayerName(player1DOM);
+players.player2 = getPlayerName(player2DOM);
+
+//set
 
 /*
 +----------+-------------------------------------------+
@@ -55,20 +73,24 @@ function playOneRockPaperScissorGame(player1, player2) {
     (player1 == choicesEnum.scissors && player2 == choicesEnum.papper) ||
     (player1 == choicesEnum.rock && player2 == choicesEnum.scissors)
   ) {
-    winner = "player1";
+    winner = players.player1;
   } else {
-    winner = "player2";
+    winner = players.player2;
   }
   return winner;
 }
 
 //updates player1Score and player2Score
 function updateScore(winner) {
-  if (winner == "player1") {
+  if (winner == players.player1) {
     player1Score++;
-  } else if (winner == "player2") {
+  } else if (winner == players.player2) {
     player2Score++;
   }
 }
 
+//Return the players name in string 
+function getPlayerName(dom){
+  return dom.getElementsByClassName('player-name')[0].getInnerHTML()
+}
 
