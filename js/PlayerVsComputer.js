@@ -28,7 +28,7 @@ player1Buttons[2].addEventListener("click", () => {
   playGame();
 });
 
-//get player 2 Selection
+//play a game
 function playGame() {
   let roundWinner;
   playersSelection.player2 = getComputerChoice();
@@ -47,7 +47,7 @@ function playGame() {
   if (roundWinner.toLowerCase() != "tie") {
     updateScoreDisplay(roundWinner);
     winnerDisplay.style.visibility = "visible";
-    winnerDisplay.innerHTML = roundWinner + "Wins";
+    winnerDisplay.innerHTML = roundWinner + " Wins";
   } else {
     winnerDisplay.style.visibility = "visible";
     winnerDisplay.innerHTML = "It' a Tie";
