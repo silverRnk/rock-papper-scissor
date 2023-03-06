@@ -20,8 +20,13 @@ const choicesEnum = {
 
 const players = {
   player1: "player1",
-  player2: "player2"
-}
+  player2: "player2",
+};
+
+const playersSelection = {
+  player1: choicesEnum.papper,
+  player2: choicesEnum.papper,
+};
 
 // returns a random element in choices variable
 function getComputerChoice() {
@@ -29,18 +34,14 @@ function getComputerChoice() {
 }
 
 //get players
-const player1DOM = document.getElementById('player1')
-const player2DOM = document.getElementById('player2')
+const player1DOM = document.getElementById("player1");
+const player2DOM = document.getElementById("player2");
 
 //set player1 selection buttons
-const player1Buttons = player1DOM
-  .getElementsByClassName('selection-item')
-
+const player1Buttons = player1DOM.getElementsByClassName("selection-item");
 
 //set player2 selection buttons
-const player2Buttons = player2DOM
-  .getElementsByClassName('selection-item')
-
+const player2Buttons = player2DOM.getElementsByClassName("selection-item");
 
 //set Players Name
 players.player1 = getPlayerName(player1DOM);
@@ -89,8 +90,27 @@ function updateScore(winner) {
   }
 }
 
-//Return the players name in string 
-function getPlayerName(dom){
-  return dom.getElementsByClassName('player-name')[0].getInnerHTML()
+//Return the players name in string
+function getPlayerName(dom) {
+  return dom.getElementsByClassName("player-name")[0].getInnerHTML();
 }
 
+function showPlayerSelection(buttons, selected) {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("selection-item-selected");
+  }
+
+  if (selected == choicesEnum.rock) {
+    buttons[0].classList.add("selection-item-selected");
+  } else if (selected == choicesEnum.papper) {
+    buttons[1].classList.add("selection-item-selected");
+  } else if (selected == choicesEnum.scissors) {
+    buttons[2].classList.add("selection-item-selected");
+  }
+}
+
+function enablePlayerButtons(buttons){
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.toggle("selection-item-en");
+  }
+}

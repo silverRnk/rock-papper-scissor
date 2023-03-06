@@ -92,6 +92,7 @@ Player
 
 .selection-item-selected{
     border: 1px solid black;
+    box-shadow: 5px 5px 5px gray;
 }
 
 .selection-item-en{
