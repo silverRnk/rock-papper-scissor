@@ -13,18 +13,42 @@ header{
 
 main{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 100px;
     height: 700px;
 }
 
+
+
+/*
+=======================
+Game Content
+=======================
+
+*/
 .game-main-content{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
 }
+
+#game-announcement{
+    visibility: hidden;
+    font-size: 1.75rem;
+    font-weight: 500;
+    height: 2rem;
+}
+
+/*
+==========================
+Player
+==========================
+
+*/
+
 
 .player{
     display: flex;
@@ -62,9 +86,21 @@ main{
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    box-shadow: 2px 2px 5px gray;
 
 }
 
+.selection-item-selected{
+    border: 1px solid black;
+}
+
+.selection-item-en{
+    cursor: pointer;
+}
+
+.selection-item-en:active{
+    background-color: gray;
+}
 
 /*
 ======================
